@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if IE]><![endif]-->
+  <title>Template</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- link rel="stylesheet" href="assets/css/main.min.css" -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <meta name="description" content="">
+  <meta name="robots" content="all">
+  <meta property="og:title" content="Template">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Template">
+  <meta property="og:image" content="assets/img/share.jpg">
+
+</head>
+
+<body class="home">
+
+  <!-- header -->
+  <header id="top">
+    <div class="container">
+      <div class="grid">
+        <div class="item logo">
+          <a href=#><img src="assets/images/logo.png"></a>
+        </div>
+        <div class="item search">
+          <div class="search-box">
+            <input type="text" name="" id="" placeholder="O que você procura?">
+            <button>
+              <svg class="icon">
+                <use xlink:href="assets/img/icons.svg#search"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="item user-links">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="assets/img/icons.svg#user"></use>
+            </svg> Login / Cadastro
+          </a>
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="assets/img/icons.svg#attendance"></use>
+            </svg> Atendimento
+          </a>
+          <a href="" class="cart">
+            <svg class="icon">
+              <use xlink:href="assets/img/icons.svg#cart"></use>
+            </svg>
+            <div class="counter">1</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box-menu">
+      <div class="container">
+        <div class="grid">
+          <div class="all-categories">
+            <a href="#">
+              Todas Categorias
+              <svg class="icon">
+                <use xlink:href="assets/img/icons.svg#arrow"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="menu">
+            <nav>
+              <ul>
+                <li class="act">
+                  <a href="#" title="">
+                    <svg class="icon ph">
+                      <use xlink:href="assets/img/icons.svg#ph"></use>
+                    </svg> Produtos PH
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="">
+                    <svg class="icon nautical">
+                      <use xlink:href="assets/img/icons.svg#nautical"></use>
+                    </svg> Náutica
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="">
+                    <svg class="icon clothes">
+                    <use xlink:href="assets/img/icons.svg#clothes"></use>
+                  </svg> Roupas
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="">
+                    <svg class="icon utensils">
+                    <use xlink:href="assets/img/icons.svg#utensils"></use>
+                  </svg> Utencilios
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="">
+                    <svg class="icon fishing">
+                      <use xlink:href="assets/img/icons.svg#fishing"></use>
+                    </svg> Pesca
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="">
+                    <svg class="icon parts">
+                    <use xlink:href="assets/img/icons.svg#parts"></use>
+                  </svg> Peças
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end:header -->
+
+  <!-- main -->
+  <main class="pbottom-35">
+    <!-- category-page -->
+    <section class="category-page">
+      <div class="container">
+        <div class="grid">
+          <div class="title">
+            <div class="box">
+              <h1>Náutico</h1>
+              <span>239 produtos encontrados</span>
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="item act">
+              <h2 class="toggle">
+                Filtrar por Preço
+                <span></span>
+              </h2>
+              <div class="item-content target">
+                <ul>
+                  <li>
+                    <label for="price0">
+                      <input type="checkbox" name="price[]" id="price0">
+                      <span class="input"></span>
+                      R$ 35 - R$ 65
+                    </label>
+                  </li>
+                  <li>
+                    <label for="price1">
+                      <input type="checkbox" name="price[]" id="price1">
+                      <span class="input"></span>
+                      R$ 65 - R$ 95
+                    </label>
+                  </li>
+                  <li>
+                    <label for="price2">
+                      <input type="checkbox" name="price[]" id="price2">
+                      <span class="input"></span>
+                      R$ 95 - R$ 130
+                    </label>
+                  </li>
+                  <li>
+                    <label for="price3">
+                      <input type="checkbox" name="price[]" id="price3">
+                      <span class="input"></span>
+                      R$ 130 - R$ 450,00
+                    </label>
+                  </li>
+                  <li>
+                    <label for="price4">
+                      <input type="checkbox" name="price[]" id="price4">
+                      <span class="input"></span>
+                      R$ 450,00 - R$ 2500,00
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item act">
+              <h2 class="toggle">
+                Descontos
+                <span></span>
+              </h2>
+              <div class="item-content target">
+                <ul>
+                  <li>
+                    <label for="discount0">
+                      <input type="checkbox" name="discount[]" id="discount0">
+                      <span class="input"></span>
+                      Mais de 80% (2587)
+                    </label>
+                  </li>
+                  <li>
+                    <label for="discount1">
+                      <input type="checkbox" name="discount[]" id="discount1">
+                      <span class="input"></span>
+                      De 60% até 80% (169)
+                    </label>
+                  </li>
+                  <li>
+                    <label for="discount2">
+                      <input type="checkbox" name="discount[]" id="discount2">
+                      <span class="input"></span>
+                      De 30% até 60% (47)
+                    </label>
+                  </li>
+                  <li>
+                    <label for="discount3">
+                      <input type="checkbox" name="discount[]" id="discount3">
+                      <span class="input"></span>
+                      De 10% até 30% (41)
+                    </label>
+                  </li>
+                  <li>
+                    <label for="discount4">
+                      <input type="checkbox" name="discount[]" id="discount4">
+                      <span class="input"></span>
+                      Até 10% (16)
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content-area">
+            <div class="product-items">
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-01.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-02.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-03.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-01.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-02.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-03.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-01.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-02.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-03.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-01.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-02.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-03.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-01.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-02.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+              <div class="product-item">
+                <div class="image">
+                  <img src="assets/images/product-03.jpg" alt="" srcset="">
+                  <span class="flag">20% OFF</span>
+                </div>
+                <div class="content">
+                  <h3>Bolsa de Pesca MTK Pro Master G Petróleo</h3>
+                  <div class="price">
+                    <del>R$ 420,00</del>
+                    <ins>R$ 310,00</ins>
+                  </div>
+                  <div class="fswp_installments_price">
+                    <svg class="icon">
+                      <use xlink:href="assets/img/icons.svg#payment"></use>
+                    </svg> em até 10x de R$ 31,90
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pagination">
+              <span>239 produtos encontrados</span>
+              <nav>
+                <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <div>
+                  <span>01</span>
+                  <a href="#">02</a>
+                  <a href="#">03</a>
+                  <a href="#">04</a>
+                </div>
+                <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end:category-page -->
+
+    <!-- product-card -->
+    <section class="product-card product-card pbottom-50 mbottom-50">
+      <div class="container">
+        <div class="grid-3">
+          <div class="item">
+            <img src="assets/images/banner2.jpg" alt="" srcset="">
+          </div>
+          <div class="item">
+            <img src="assets/images/banner2.jpg" alt="" srcset="">
+          </div>
+          <div class="item">
+            <img src="assets/images/banner2.jpg" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end:product-card -->
+
+    <!-- template ->
+    <section class="template">
+      <div class="container"></div>
+    </section>
+    <!- end:template -->
+  </main>
+  <!-- end:main -->
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="grid-4">
+        <div class="item cols-01">
+          <img src="assets/images/logo-footer.png">
+        </div>
+        <div class="item cols-02">
+          <h5>Horario de funcionamento:</h5>
+          <p>Segunda-feira à Sexta Feira 08:00–18:00 <br>Sábado 08:30–12:30</p>
+        </div>
+        <div class="item cols-04">
+          <h5>Telefones:</h5>
+          <p>(35) 3222-1746 <br> (35) 98876-6164 <br> (11) 98606-6786</p>
+        </div>
+        <div class="item cols-05">
+          <a href="#" title="Contato">Contato</a>
+          <a href="#" title="Minha Área">Minha Área</a>
+          <a href="#" title="Políticas">Políticas</a>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="item">
+          <p>Endereço: Av. Alm. Barroso, 315 <br>Vila Sao Geraldo, Varginha<br>MG, 37030-320</p><br>
+          <p>CNPJ - 00.626.625/0001-63</p>
+        </div>
+        <div class="item">
+          <h5>Formas de pagamento</h5>
+          <img src="assets/images/payment-methods.png" alt="" srcset="">
+        </div>
+        <div class="item">
+          <a href="#" class="share"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="share"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <p class="alt">copyright 2022 - Hp Pesca & Moto & Nautica</p>
+        </div>
+        <div class="item">
+          <p class="alt">Criação de site por UpSites</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- end:footer -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="assets/js/bundle.js"></script>
+  <!-- script src="assets/js/bundle.min.js"></script -->
+
+</body>
+
+</html>
