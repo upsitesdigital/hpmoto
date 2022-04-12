@@ -544,14 +544,36 @@
         padding-bottom: 15px;
         display: block;
       }
-      h2 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: $font-main;
         font-style: normal;
         font-weight: 500;
-        font-size: 30px;
         line-height: 130%;
         color: $color-blue;
         padding-bottom: 32px;
+      }
+      h1 {
+        font-size: 34px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      h4 {
+        font-size: 22px;
+      }
+      h5 {
+        font-size: 20px;
+      }
+      h6 {
+        font-size: 18px;
       }
       p {
         font-family: $font-main;
@@ -572,6 +594,53 @@
       }
       .full {
         width: 100%;
+      }
+    }
+  }
+  &.internal {
+    padding: 96px 0 30px 0;
+    .container {
+      .grid:last-child {
+        border-bottom: 1px solid #D3D3D3;
+        padding-bottom: 47px;
+      }
+    }
+    .grid {
+      .text {
+        grid-area: text;
+        padding: 0 0 0 13px;
+        em {
+          letter-spacing: 4px;
+          font-size: 14px;
+          padding-bottom: 16px;
+        }
+        h2 {
+          font-size: 32px;
+        }
+        p {}
+      }
+      .image {
+        grid-area: image;
+        img {
+          position: relative;
+          margin: 15px 0 0 0;
+        }
+      }
+      &.left {
+        @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'text image');
+      }
+      &.right {
+        @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'image text');
+        .image {
+          img {
+            float: right;
+          }
+        }
+        .text {
+          padding-left: 70px;
+          padding-top: 44px;
+          padding-right: 54px;
+        }
       }
     }
   }
@@ -789,6 +858,85 @@
         font-size: 12.9167px;
         line-height: 16px;
         color: #5D748E;
+      }
+    }
+  }
+}
+
+.how-to-buy {
+  padding: 23px 0 98px 0;
+  em {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8F8F8F;
+    padding: 0 0 15px 9px;
+    display: block;
+  }
+  h2 {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    color: #1534C8;
+    padding: 0 0 0 9px;
+  }
+  .grid {
+    padding: 58px 10px 0 10px;
+    @include columns( $quant: 20% 20% 20% 19%, $gutter: 7%, $align: stretch, $template: '');
+    .item {
+      position: relative;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 52px;
+        background: #1534C8;
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        color: #FFFFFF;
+      }
+      h3 {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 160%;
+        color: #212121;
+        padding: 21px 0 14px 0;
+      }
+      p {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #212121;
+      }
+      .box-icon {
+        position: absolute;
+        top: 24px;
+        right: -8px;
+        width: 18px;
+        height: 12px;
+        .icon {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:last-child {
+        .box-icon {
+          display: none;
+        }
       }
     }
   }
