@@ -1,25 +1,28 @@
 // Config
 @import "core/settings";
 @import "core/utils";
-
 // Vendor
 @import "slick-carousel/slick/slick.scss";
-
 // Defaults
 @import "core/global";
 @import "core/grid";
 @import "core/fonts";
-
 // Structural
 @import "core/structure";
-
 // Modules
 @import "modules/sidebar";
 @import "modules/breadcrumb";
 @import "modules/slider";
 @import "modules/buttons";
 @import "modules/forms";
-
+@import "modules/pagination";
+@import "modules/search-box";
+@import "modules/support-certification";
+@import "modules/category-page";
+@import "modules/call-center";
+@import "modules/how-to-buy";
+@import "modules/text-box";
+@import "modules/product";
 // Pages
 @import "pages/home";
 @import "pages/about";

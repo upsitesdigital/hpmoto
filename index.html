@@ -56,12 +56,12 @@
           <a href="#">
             <svg class="icon">
               <use xlink:href="assets/img/icons.svg#user"></use>
-            </svg> Login / Cadastro
+            </svg> <span>Login / Cadastro</span>
           </a>
           <a href="#">
             <svg class="icon">
               <use xlink:href="assets/img/icons.svg#attendance"></use>
-            </svg> Atendimento
+            </svg> <span>Atendimento</span>
           </a>
           <a href="" class="cart">
             <svg class="icon">
@@ -72,69 +72,78 @@
         </div>
       </div>
     </div>
-    <div class="box-menu">
-      <div class="container">
-        <div class="grid">
-          <div class="all-categories">
-            <a href="#">
-              Todas Categorias
-              <svg class="icon">
-                <use xlink:href="assets/img/icons.svg#arrow"></use>
+  </header>
+  <div class="box-menu">
+    <div class="container">
+      <div class="grid">
+        <div class="all-categories">
+          <a href="#">
+            Todas Categorias
+            <svg class="icon">
+              <use xlink:href="assets/img/icons.svg#arrow"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="menu">
+          <a href="#" id="open-menu" class="hidden-tablet hidden-desktop hidden-fullDesktop hidden-fullhd">
+            <div class="ani">
+              <svg id="close" width="30" height="30" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
               </svg>
-            </a>
-          </div>
-          <div class="menu">
-            <nav>
-              <ul>
-                <li class="act">
-                  <a href="#" title="">
-                    <svg class="icon ph">
-                      <use xlink:href="assets/img/icons.svg#ph"></use>
-                    </svg> Produtos PH
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="">
-                    <svg class="icon nautical">
-                      <use xlink:href="assets/img/icons.svg#nautical"></use>
-                    </svg> Náutica
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="">
-                    <svg class="icon clothes">
-                    <use xlink:href="assets/img/icons.svg#clothes"></use>
-                  </svg> Roupas
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="">
-                    <svg class="icon utensils">
-                    <use xlink:href="assets/img/icons.svg#utensils"></use>
-                  </svg> Utencilios
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="">
-                    <svg class="icon fishing">
-                      <use xlink:href="assets/img/icons.svg#fishing"></use>
-                    </svg> Pesca
-                  </a>
-                </li>
-                <li>
-                  <a href="#" title="">
-                    <svg class="icon parts">
-                    <use xlink:href="assets/img/icons.svg#parts"></use>
-                  </svg> Peças
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+            </div>
+          </a>
+          <nav>
+            <ul>
+              <li class="act">
+                <a href="#" title="">
+                  <svg class="icon ph">
+                    <use xlink:href="assets/img/icons.svg#ph"></use>
+                  </svg> Produtos PH
+                </a>
+              </li>
+              <li>
+                <a href="#" title="">
+                  <svg class="icon nautical">
+                    <use xlink:href="assets/img/icons.svg#nautical"></use>
+                  </svg> Náutica
+                </a>
+              </li>
+              <li>
+                <a href="#" title="">
+                  <svg class="icon clothes">
+                  <use xlink:href="assets/img/icons.svg#clothes"></use>
+                </svg> Roupas
+                </a>
+              </li>
+              <li>
+                <a href="#" title="">
+                  <svg class="icon utensils">
+                  <use xlink:href="assets/img/icons.svg#utensils"></use>
+                </svg> Utencilios
+                </a>
+              </li>
+              <li>
+                <a href="#" title="">
+                  <svg class="icon fishing">
+                    <use xlink:href="assets/img/icons.svg#fishing"></use>
+                  </svg> Pesca
+                </a>
+              </li>
+              <li>
+                <a href="#" title="">
+                  <svg class="icon parts">
+                  <use xlink:href="assets/img/icons.svg#parts"></use>
+                </svg> Peças
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
-  </header>
+  </div>
   <!-- end:header -->
 
   <!-- main -->
@@ -211,7 +220,7 @@
     <!-- end:product-card -->
 
     <!-- product-list -->
-    <section id="test" class="product-list">
+    <section class="product-list">
       <div class="container">
         <div class="title">
           <h2>Mais procurados</h2>
@@ -912,7 +921,17 @@
           <p class="alt">copyright 2022 - Hp Pesca & Moto & Nautica</p>
         </div>
         <div class="item">
-          <p class="alt">Criação de site por UpSites</p>
+          <p class="alt">Criação de site por
+            <a href="#" class="upsites">
+              <span>U</span>
+              <span>p</span>
+              <span>S</span>
+              <span>i</span>
+              <span>t</span>
+              <span>e</span>
+              <span>s</span>
+            </a>
+          </p>
         </div>
       </div>
     </div>

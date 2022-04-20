@@ -1,0 +1,94 @@
+.search-box {
+  width: 100%;
+  border: 1px solid #E9ECEF;
+  display: flex;
+  border-radius: 4px;
+  background-color: $color-white;
+  @include animate($time: 0.3s);
+  input {
+    width: 100%;
+    padding: 10px 21px 12px 21px;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #515151;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+  button {
+    width: 50px;
+    border: none;
+    background: transparent;
+    padding: 3px 6px 0 0px;
+    .icon {
+      width: 30px;
+      height: 30px;
+      fill: transparent;
+      stroke: $color-blue;
+      stroke-width: 1.5px;
+    }
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .search-box {
+    border-radius: get-vw-lg(4px);
+    input {
+      padding: get-vw-lg(10px) get-vw-lg(21px) get-vw-lg(12px) get-vw-lg(21px);
+      font-size: get-vw-lg(16px);
+    }
+    button {
+      width: get-vw-lg(50px);
+      padding: get-vw-lg(3px) get-vw-lg(6px) 0 0;
+      .icon {
+        width: get-vw-lg(30px);
+        height: get-vw-lg(30px);
+        stroke-width: get-vw-lg(1.5px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  .search-box {
+    border-radius: get-vw-sm(4px);
+    input {
+      padding: get-vw-sm(10px) get-vw-sm(21px) get-vw-sm(12px) get-vw-sm(21px);
+      font-size: get-vw-sm(16px);
+    }
+    button {
+      width: get-vw-sm(50px);
+      padding: get-vw-sm(3px) get-vw-sm(6px) 0 0;
+      .icon {
+        width: get-vw-sm(30px);
+        height: get-vw-sm(30px);
+        stroke-width: get-vw-sm(1.5px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  .search-box {
+    border-radius: get-vw-xs(4px);
+    input {
+      padding: get-vw-xs(10px) get-vw-xs(21px) get-vw-xs(12px) get-vw-xs(21px);
+      font-size: get-vw-xs(16px);
+    }
+    button {
+      width: get-vw-xs(50px);
+      padding: get-vw-xs(3px) get-vw-xs(6px) 0 0;
+      .icon {
+        width: get-vw-xs(30px);
+        height: get-vw-xs(30px);
+        stroke-width: get-vw-xs(1.5px);
+      }
+    }
+  }
+}

@@ -40,6 +40,19 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });
 }

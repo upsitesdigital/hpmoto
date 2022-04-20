@@ -6,24 +6,89 @@ body {
   //background: url(../images/bg.jpg) top center no-repeat;
 }
 
+#open-menu {
+  height: 30px;
+  display: flex;
+  z-index: 100;
+  text-align: center;
+  font-size: 20px;
+  line-height: 48px;
+  color: $color-blue;
+  -webkit-transition: right 0.5s ease;
+  transition: right 0.5s ease;
+  z-index: 1000;
+}
+
+#open-menu {
+  .ani {
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    min-width: 50px;
+    svg {}
+    #close {
+      margin: 0 auto;
+      .line {
+        fill: none;
+        stroke: $color-blue;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+    }
+  }
+  &.opened {
+    #close {
+      .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+    }
+  }
+}
+
 // header
 header {
   width: 100%;
-  height: 178px;
   .grid {
-    @include columns( $quant: 28% 38% 34%, $gutter: 0, $align: start, $template: 'logo search user-links');
+    @include columns( $quant: 28% 38% 34%, $gutter: 0, $align: center, $template: 'logo search user-links');
     .item.logo {
       grid-area: logo;
+      img {
+        width: 100%;
+      }
     }
     .item.search {
       grid-area: search;
-      padding: 33px 24px 0 46px;
+      padding: 0px 24px 0 46px;
     }
     .item.user-links {
       grid-area: user-links;
       display: flex;
       justify-content: space-between;
-      padding: 41px 16px 0 8px;
+      padding: 0px 16px 0 8px;
       a {
         display: flex;
         align-items: center;
@@ -43,6 +108,7 @@ header {
         }
         &.cart {
           position: relative;
+          @include animate($time: 0.3s);
           .icon {
             width: 32px;
             height: 32px;
@@ -64,108 +130,358 @@ header {
             color: $color-white;
             text-align: center;
           }
+          &:hover {
+            transform: scale(1.15);
+          }
+        }
+        span {
+          position: relative;
+          &::after {
+            @include animate($time: 0.3s);
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: $color-blue;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+          }
+        }
+        &:hover {
+          span {
+            &::after {
+              left: 0;
+              width: 100%;
+            }
+          }
         }
       }
     }
   }
-  .box-menu {
-    position: relative;
-    border-top: 1px solid #E9ECEF;
-    border-bottom: 1px solid #E9ECEF;
-    &:before {
-      content: '';
-      width: 50%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: $color-blue;
-    }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  header {
     .grid {
-      position: relative;
-      @include columns( $quant: 18% 82%, $gutter: 0, $align: stretch, $template: 'all-categories menu');
-      .all-categories {
-        grid-area: all-categories;
-        font-family: $font-main;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 130%;
-        color: #FFFFFF;
-        padding: 15px 0 17px 12px;
-        background-color: $color-blue;
+      @include columns( $quant: 28% 38% 34%, $gutter: 0, $align: start, $template: 'logo search user-links');
+      .item.search {
+        padding: get-vw-lg(33px) get-vw-lg(24px) 0 get-vw-lg(46px);
+      }
+      .item.user-links {
+        padding: get-vw-lg(41px) get-vw-lg(16px) 0 get-vw-lg(8px);
         a {
+          font-size: get-vw-lg(15px);
+          .icon {
+            width: get-vw-lg(24px);
+            height: get-vw-lg(24px);
+            stroke-width: get-vw-lg(1.5px);
+            margin: 0 get-vw-lg(8px) 0 0;
+          }
+          &.cart {
+            .icon {
+              width: get-vw-lg(32px);
+              height: get-vw-lg(32px);
+            }
+            .counter {
+              width: get-vw-lg(18px);
+              height: get-vw-lg(18px);
+              top: get-vw-lg(1px);
+              right: get-vw-lg(-8px);
+              font-size: get-vw-lg(11px);
+              line-height: get-vw-lg(18px);
+            }
+          }
+          span {
+            &::after {
+              height: get-vw-lg(2px);
+            }
+          }
+          &:hover {
+            span {
+              &::after {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  header {
+    .grid {
+      @include columns( $quant: 45% 55%, $gutter: 0, $align: center, $template: 'logo search' 'logo user-links');
+      .item.search {
+        padding: get-vw-sm(24px) 0 0 0;
+      }
+      .item.user-links {
+        padding: get-vw-sm(16px) get-vw-sm(16px) get-vw-sm(16px) get-vw-sm(8px);
+        a {
+          font-size: get-vw-sm(15px);
+          .icon {
+            width: get-vw-sm(24px);
+            height: get-vw-sm(24px);
+            stroke-width: get-vw-sm(1.5px);
+            margin: 0 get-vw-sm(8px) 0 0;
+          }
+          &.cart {
+            .icon {
+              width: get-vw-sm(32px);
+              height: get-vw-sm(32px);
+            }
+            .counter {
+              width: get-vw-sm(18px);
+              height: get-vw-sm(18px);
+              top: get-vw-sm(1px);
+              right: get-vw-sm(-8px);
+              font-size: get-vw-sm(11px);
+              line-height: get-vw-sm(18px);
+            }
+          }
+          span {
+            &::after {
+              height: get-vw-sm(2px);
+            }
+          }
+          &:hover {
+            span {
+              &::after {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  header {
+    .grid {
+      @include columns( $quant: 45% 55%, $gutter: 0, $align: center, $template: 'logo search' 'user-links user-links');
+      .item.search {
+        padding: 0 0 0 0;
+      }
+      .item.user-links {
+        padding: get-vw-xs(2px) get-vw-xs(16px) get-vw-xs(16px) get-vw-xs(8px);
+        a {
+          font-size: get-vw-xs(15px);
+          .icon {
+            width: get-vw-xs(24px);
+            height: get-vw-xs(24px);
+            stroke-width: get-vw-xs(1.5px);
+            margin: 0 get-vw-xs(8px) 0 0;
+          }
+          &.cart {
+            .icon {
+              width: get-vw-xs(32px);
+              height: get-vw-xs(32px);
+            }
+            .counter {
+              width: get-vw-xs(18px);
+              height: get-vw-xs(18px);
+              top: get-vw-xs(1px);
+              right: get-vw-xs(-8px);
+              font-size: get-vw-xs(11px);
+              line-height: get-vw-xs(18px);
+            }
+          }
+          span {
+            &::after {
+              height: get-vw-xs(2px);
+            }
+          }
+          &:hover {
+            span {
+              &::after {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// end header
+// box-menu
+.box-menu {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-top: 1px solid #E9ECEF;
+  border-bottom: 1px solid #E9ECEF;
+  background-color: $color-white;
+  &:before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-blue;
+  }
+  .grid {
+    position: relative;
+    @include columns( $quant: 18% 82%, $gutter: 0, $align: stretch, $template: 'all-categories menu');
+    .all-categories {
+      grid-area: all-categories;
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: #FFFFFF;
+      padding: 15px 0 17px 12px;
+      background-color: $color-blue;
+      @include animate($time: 0.3s);
+      a {
+        display: flex;
+        align-items: center;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        fill: transparent;
+        stroke: $color-white;
+        stroke-width: 1.5px;
+        margin: 0 0 0 19px;
+      }
+      &:hover {
+        padding-left: 16px;
+      }
+    }
+    .menu {
+      grid-area: menu;
+      padding: 13px 13px 0 60px;
+      background-color: $color-white;
+      nav {
+        ul {
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              font-family: $font-main;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 130%;
+              color: $color-dark-blue;
+              .icon {
+                @include animate($time: 0.3s);
+                fill: $color-dark-blue;
+                &.ph {
+                  width: 19px;
+                  height: 29px;
+                  margin-right: 8px;
+                }
+                &.nautical {
+                  width: 36px;
+                  height: 13px;
+                  margin-right: 8px;
+                }
+                &.clothes {
+                  width: 22px;
+                  height: 26px;
+                  margin-right: 8px;
+                }
+                &.utensils {
+                  width: 29px;
+                  height: 26px;
+                  margin-right: 8px;
+                }
+                &.fishing {
+                  width: 27px;
+                  height: 27px;
+                  margin-right: 8px;
+                }
+                &.parts {
+                  width: 13px;
+                  height: 23px;
+                  margin-right: 8px;
+                }
+              }
+            }
+            &:hover,
+            &.act {
+              a {
+                color: $color-red;
+                .icon {
+                  fill: $color-red;
+                }
+              }
+            }
+          }
         }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .box-menu {
+    .grid {
+      @include columns( $quant: 18% 82%, $gutter: 0, $align: stretch, $template: 'all-categories menu');
+      .all-categories {
+        font-size: get-vw-lg(16px);
+        padding: get-vw-lg(15px) 0 get-vw-lg(17px) get-vw-lg(12px);
         .icon {
-          width: 24px;
-          height: 24px;
-          fill: transparent;
-          stroke: $color-white;
-          stroke-width: 1.5px;
-          margin: 0 0 0 19px;
+          width: get-vw-lg(24px);
+          height: get-vw-lg(24px);
+          stroke-width: get-vw-lg(1.5px);
+          margin: 0 0 0 get-vw-lg(19px);
+        }
+        &:hover {
+          padding-left: get-vw-lg(16px);
         }
       }
       .menu {
-        grid-area: menu;
-        padding: 13px 13px 0 60px;
-        background-color: $color-white;
+        padding: get-vw-lg(13px) get-vw-lg(13px) 0 get-vw-lg(60px);
         nav {
           ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             li {
               a {
-                display: flex;
-                align-items: center;
-                font-family: $font-main;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 130%;
-                color: $color-dark-blue;
+                font-size: get-vw-lg(16px);
                 .icon {
-                  fill: $color-dark-blue;
                   &.ph {
-                    width: 19px;
-                    height: 29px;
-                    margin-right: 8px;
+                    width: get-vw-lg(19px);
+                    height: get-vw-lg(29px);
+                    margin-right: get-vw-lg(8px);
                   }
                   &.nautical {
-                    width: 36px;
-                    height: 13px;
-                    margin-right: 8px;
+                    width: get-vw-lg(36px);
+                    height: get-vw-lg(13px);
+                    margin-right: get-vw-lg(8px);
                   }
                   &.clothes {
-                    width: 22px;
-                    height: 26px;
-                    margin-right: 8px;
+                    width: get-vw-lg(22px);
+                    height: get-vw-lg(26px);
+                    margin-right: get-vw-lg(8px);
                   }
                   &.utensils {
-                    width: 29px;
-                    height: 26px;
-                    margin-right: 8px;
+                    width: get-vw-lg(29px);
+                    height: get-vw-lg(26px);
+                    margin-right: get-vw-lg(8px);
                   }
                   &.fishing {
-                    width: 27px;
-                    height: 27px;
-                    margin-right: 8px;
+                    width: get-vw-lg(27px);
+                    height: get-vw-lg(27px);
+                    margin-right: get-vw-lg(8px);
                   }
                   &.parts {
-                    width: 13px;
-                    height: 23px;
-                    margin-right: 8px;
-                  }
-                }
-              }
-              &:hover,
-              &.act {
-                a {
-                  color: $color-red;
-                  .icon {
-                    fill: $color-red;
+                    width: get-vw-lg(13px);
+                    height: get-vw-lg(23px);
+                    margin-right: get-vw-lg(8px);
                   }
                 }
               }
@@ -177,21 +493,145 @@ header {
   }
 }
 
-@include breakpoint2($min:xl, $max:'') {}
+@include breakpoint2($min:xs, $max:sm) {
+  .box-menu {
+    .grid {
+      @include columns( $quant: 30% 70%, $gutter: 0, $align: stretch, $template: 'all-categories menu');
+      .all-categories {
+        font-size: get-vw-sm(16px);
+        padding: get-vw-sm(15px) 0 get-vw-sm(17px) get-vw-sm(12px);
+        .icon {
+          width: get-vw-sm(24px);
+          height: get-vw-sm(24px);
+          stroke-width: get-vw-sm(1.5px);
+          margin: 0 0 0 get-vw-sm(19px);
+        }
+        &:hover {
+          padding-left: get-vw-sm(16px);
+        }
+      }
+      .menu {
+        padding: 0 get-vw-sm(13px) 0 get-vw-sm(60px);
+        display: flex;
+        align-items: center;
+        nav {
+          display: none;
+          ul {
+            li {
+              a {
+                font-size: get-vw-sm(16px);
+                .icon {
+                  &.ph {
+                    width: get-vw-sm(19px);
+                    height: get-vw-sm(29px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                  &.nautical {
+                    width: get-vw-sm(36px);
+                    height: get-vw-sm(13px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                  &.clothes {
+                    width: get-vw-sm(22px);
+                    height: get-vw-sm(26px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                  &.utensils {
+                    width: get-vw-sm(29px);
+                    height: get-vw-sm(26px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                  &.fishing {
+                    width: get-vw-sm(27px);
+                    height: get-vw-sm(27px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                  &.parts {
+                    width: get-vw-sm(13px);
+                    height: get-vw-sm(23px);
+                    margin-right: get-vw-sm(8px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
-@include breakpoint2($min:lg, $max:xl) {}
+@include breakpoint2($min:'', $max:xs) {
+  .box-menu {
+    .grid {
+      @include columns( $quant: 50% 50%, $gutter: 0, $align: stretch, $template: 'all-categories menu');
+      .all-categories {
+        font-size: get-vw-xs(16px);
+        padding: get-vw-xs(15px) 0 get-vw-xs(17px) get-vw-xs(12px);
+        .icon {
+          width: get-vw-xs(24px);
+          height: get-vw-xs(24px);
+          stroke-width: get-vw-xs(1.5px);
+          margin: 0 0 0 get-vw-xs(19px);
+        }
+        &:hover {
+          padding-left: get-vw-xs(16px);
+        }
+      }
+      .menu {
+        padding: get-vw-xs(13px) get-vw-xs(13px) 0 get-vw-xs(60px);
+        nav {
+          display: none;
+          ul {
+            li {
+              a {
+                font-size: get-vw-xs(16px);
+                .icon {
+                  &.ph {
+                    width: get-vw-xs(19px);
+                    height: get-vw-xs(29px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                  &.nautical {
+                    width: get-vw-xs(36px);
+                    height: get-vw-xs(13px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                  &.clothes {
+                    width: get-vw-xs(22px);
+                    height: get-vw-xs(26px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                  &.utensils {
+                    width: get-vw-xs(29px);
+                    height: get-vw-xs(26px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                  &.fishing {
+                    width: get-vw-xs(27px);
+                    height: get-vw-xs(27px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                  &.parts {
+                    width: get-vw-xs(13px);
+                    height: get-vw-xs(23px);
+                    margin-right: get-vw-xs(8px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
-@include breakpoint2($min:md, $max:lg) {}
-
-@include breakpoint2($min:sm, $max:md) {}
-
-@include breakpoint2($min:xs, $max:sm) {}
-
-@include breakpoint2($min:'', $max:xs) {}
-
-// end header
+// end box-menu
 // main
-main {}
+main {
+  overflow: hidden;
+}
 
 @include breakpoint2($min:xl, $max:'') {}
 
@@ -212,6 +652,11 @@ footer {
   .grid-4 {
     padding: 66px 14px;
     @include columns( $quant: 23% 25.8% 14.5% 7.7%, $gutter: 9.7%, $align: start, $template: '');
+    .cols-01 {
+      img {
+        width: 100%;
+      }
+    }
   }
   .grid-3 {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -264,6 +709,7 @@ footer {
         width: 38px;
         height: 38px;
         background-color: $color-white;
+        border: 1px solid $color-white;
         display: inline-block;
         float: right;
         margin-left: 17px;
@@ -272,21 +718,195 @@ footer {
         font-size: 17px;
         line-height: 38px;
         text-align: center;
+        @include animate($time: 0.3s);
+        &:hover {
+          background-color: transparent;
+          color: $color-white;
+        }
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+      &.upsites {
+        display: inline-block;
+        font-size: 0px;
+        span {
+          display: inline-block;
+          font-size: 14px;
+          position: relative;
+          @include animate($time: 0.3s);
+          top: 0;
+          &:hover {
+            top: -2px;
+            text-shadow: 1px 1px 0px #000000;
+          }
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  footer {
+    .grid-4 {
+      padding: get-vw-lg(66px) get-vw-lg(14px);
+      @include columns( $quant: 23% 25.8% 14.5% 7.7%, $gutter: 9.7%, $align: start, $template: '');
+    }
+    .grid-3 {
+      padding: get-vw-lg(29px) get-vw-lg(9px) get-vw-lg(43px) get-vw-lg(14px);
+      @include columns( $quant: 23% 44% 13.6%, $gutter: 9.7%, $align: center, $template: '');
+    }
+    .grid {
+      padding: get-vw-lg(29px) get-vw-lg(9px) get-vw-lg(40px) get-vw-lg(14px);
+    }
+    .item {
+      h5 {
+        font-size: get-vw-lg(14px);
+        padding-bottom: get-vw-lg(8px);
+      }
+      p {
+        font-size: get-vw-lg(14px);
+        &.alt {
+          font-size: get-vw-lg(13px);
+          line-height: get-vw-lg(16px);
+        }
+      }
+      a {
+        font-size: get-vw-lg(14px);
+        margin-bottom: get-vw-lg(9px);
+        &.share {
+          width: get-vw-lg(38px);
+          height: get-vw-lg(38px);
+          margin-left: get-vw-lg(17px);
+          margin-top: get-vw-lg(62px);
+          font-size: get-vw-lg(17px);
+          line-height: get-vw-lg(38px);
+        }
+        &.upsites {
+          span {
+            font-size: get-vw-lg(14px);
+            &:hover {
+              top: get-vw-lg(-2px);
+            }
+          }
+        }
       }
     }
   }
 }
 
-@include breakpoint2($min:xl, $max:'') {}
+@include breakpoint2($min:xs, $max:sm) {
+  footer {
+    .grid-4 {
+      padding: get-vw-sm(66px) get-vw-sm(14px);
+      @include columns( $quant: 45% 45%, $gutter: 9.7%, $align: start, $template: '');
+    }
+    .grid-3 {
+      padding: get-vw-sm(29px) get-vw-sm(9px) get-vw-sm(43px) get-vw-sm(14px);
+      @include columns( $quant: 40% 50%, $gutter: 9.7%, $align: center, $template: 'child-1 child-2' 'child-3 child-3');
+      .item {
+        &:nth-child(1) {
+          grid-area: child-1;
+        }
+        &:nth-child(2) {
+          grid-area: child-2;
+        }
+        &:nth-child(3) {
+          grid-area: child-3;
+        }
+      }
+    }
+    .grid {
+      padding: get-vw-sm(29px) get-vw-sm(9px) get-vw-sm(40px) get-vw-sm(14px);
+    }
+    .item {
+      h5 {
+        font-size: get-vw-sm(14px);
+        padding-bottom: get-vw-sm(8px);
+      }
+      p {
+        font-size: get-vw-sm(14px);
+        &.alt {
+          font-size: get-vw-sm(13px);
+          line-height: get-vw-sm(16px);
+        }
+      }
+      a {
+        font-size: get-vw-sm(14px);
+        margin-bottom: get-vw-sm(9px);
+        &.share {
+          width: get-vw-sm(38px);
+          height: get-vw-sm(38px);
+          margin-left: get-vw-sm(17px);
+          margin-top: 0;
+          font-size: get-vw-sm(17px);
+          line-height: get-vw-sm(38px);
+        }
+        &.upsites {
+          span {
+            font-size: get-vw-sm(14px);
+            &:hover {
+              top: get-vw-sm(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
-@include breakpoint2($min:lg, $max:xl) {}
-
-@include breakpoint2($min:md, $max:lg) {}
-
-@include breakpoint2($min:sm, $max:md) {}
-
-@include breakpoint2($min:xs, $max:sm) {}
-
-@include breakpoint2($min:'', $max:xs) {}
+@include breakpoint2($min:'', $max:xs) {
+  footer {
+    .grid-4 {
+      padding: get-vw-xs(66px) get-vw-xs(14px) 0 get-vw-xs(14px);
+      @include columns( $quant: 100%, $gutter: 0%, $align: start, $template: '');
+    }
+    .grid-3 {
+      padding: get-vw-xs(29px) get-vw-xs(9px) 0 get-vw-xs(14px);
+      @include columns( $quant: 100%, $gutter: 0%, $align: center, $template: '');
+    }
+    .grid {
+      flex-direction: column;
+      padding: get-vw-xs(29px) get-vw-xs(9px) 0 get-vw-xs(14px);
+    }
+    .item {
+      padding-bottom: get-vw-xs(28px);
+      h5 {
+        font-size: get-vw-xs(14px);
+        padding-bottom: get-vw-xs(8px);
+      }
+      p {
+        font-size: get-vw-xs(14px);
+        &.alt {
+          font-size: get-vw-xs(13px);
+          line-height: get-vw-xs(16px);
+        }
+      }
+      a {
+        font-size: get-vw-xs(14px);
+        margin-bottom: get-vw-xs(9px);
+        &.share {
+          width: get-vw-xs(38px);
+          height: get-vw-xs(38px);
+          margin-left: get-vw-xs(17px);
+          margin-top: 0;
+          font-size: get-vw-xs(17px);
+          line-height: get-vw-xs(38px);
+        }
+        &.upsites {
+          span {
+            font-size: get-vw-xs(14px);
+            &:hover {
+              top: get-vw-xs(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // end footer

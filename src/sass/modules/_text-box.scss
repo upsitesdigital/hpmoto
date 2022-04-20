@@ -1,0 +1,397 @@
+.text-box {
+  padding: 160px 0 111px 0;
+  .grid {
+    @include columns( $quant: 47% 53%, $gutter: 0, $align: stretch, $template: '');
+    .text {
+      padding: 0 0 0 11px;
+      em {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        color: #8F8F8F;
+        padding-bottom: 15px;
+        display: block;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        color: $color-blue;
+        padding-bottom: 32px;
+      }
+      h1 {
+        font-size: 34px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      h4 {
+        font-size: 22px;
+      }
+      h5 {
+        font-size: 20px;
+      }
+      h6 {
+        font-size: 18px;
+      }
+      p {
+        font-family: $font-main;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #212121;
+        padding-bottom: 27px;
+      }
+    }
+    .image {
+      position: relative;
+      .absolute {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .full {
+        width: 100%;
+      }
+    }
+  }
+  &.internal {
+    padding: 96px 0 30px 0;
+    .container {
+      .grid:last-child {
+        border-bottom: 1px solid #D3D3D3;
+        padding-bottom: 47px;
+      }
+    }
+    .grid {
+      .text {
+        grid-area: text;
+        padding: 0 0 0 13px;
+        em {
+          letter-spacing: 4px;
+          font-size: 14px;
+          padding-bottom: 16px;
+        }
+        h2 {
+          font-size: 32px;
+        }
+        p {}
+      }
+      .image {
+        grid-area: image;
+        img {
+          position: relative;
+          margin: 15px 0 0 0;
+        }
+      }
+      &.left {
+        @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'text image');
+      }
+      &.right {
+        @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'image text');
+        .image {
+          img {
+            float: right;
+          }
+        }
+        .text {
+          padding-left: 70px;
+          padding-top: 44px;
+          padding-right: 54px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .text-box {
+    padding: get-vw-lg(160px) 0 get-vw-lg(111px) 0;
+    .grid {
+      @include columns( $quant: 47% 53%, $gutter: 0, $align: stretch, $template: '');
+      .text {
+        padding: 0 0 0 get-vw-lg(11px);
+        em {
+          font-size: get-vw-lg(18px);
+          padding-bottom: get-vw-lg(15px);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          padding-bottom: get-vw-lg(32px);
+        }
+        h1 {
+          font-size: get-vw-lg(34px);
+        }
+        h2 {
+          font-size: get-vw-lg(30px);
+        }
+        h3 {
+          font-size: get-vw-lg(24px);
+        }
+        h4 {
+          font-size: get-vw-lg(22px);
+        }
+        h5 {
+          font-size: get-vw-lg(20px);
+        }
+        h6 {
+          font-size: get-vw-lg(18px);
+        }
+        p {
+          font-size: get-vw-lg(16px);
+          padding-bottom: get-vw-lg(27px);
+        }
+      }
+    }
+    &.internal {
+      padding: get-vw-lg(96px) 0 get-vw-lg(30px) 0;
+      .container {
+        .grid:last-child {
+          padding-bottom: get-vw-lg(47px);
+        }
+      }
+      .grid {
+        .text {
+          padding: 0 0 0 get-vw-lg(13px);
+          em {
+            letter-spacing: get-vw-lg(4px);
+            font-size: get-vw-lg(14px);
+            padding-bottom: get-vw-lg(16px);
+          }
+          h2 {
+            font-size: get-vw-lg(32px);
+          }
+          p {}
+        }
+        .image {
+          img {
+            margin: get-vw-lg(15px) 0 0 0;
+          }
+        }
+        &.left {
+          @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'text image');
+        }
+        &.right {
+          @include columns( $quant: 45.3% 54.7%, $gutter: 0, $align: stretch, $template: 'image text');
+          .image {
+            img {
+              float: right;
+            }
+          }
+          .text {
+            padding-left: get-vw-lg(70px);
+            padding-top: get-vw-lg(44px);
+            padding-right: get-vw-lg(54px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  .text-box {
+    padding: get-vw-sm(160px) 0 get-vw-sm(111px) 0;
+    .grid {
+      @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: '');
+      .text {
+        padding: 0 0 0 get-vw-sm(11px);
+        em {
+          font-size: get-vw-sm(18px);
+          padding-bottom: get-vw-sm(15px);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          padding-bottom: get-vw-sm(32px);
+        }
+        h1 {
+          font-size: get-vw-sm(34px);
+        }
+        h2 {
+          font-size: get-vw-sm(30px);
+        }
+        h3 {
+          font-size: get-vw-sm(24px);
+        }
+        h4 {
+          font-size: get-vw-sm(22px);
+        }
+        h5 {
+          font-size: get-vw-sm(20px);
+        }
+        h6 {
+          font-size: get-vw-sm(18px);
+        }
+        p {
+          font-size: get-vw-sm(16px);
+          padding-bottom: get-vw-sm(27px);
+        }
+      }
+      .image {
+        .absolute {
+          position: relative;
+        }
+      }
+    }
+    &.internal {
+      padding: get-vw-sm(96px) 0 get-vw-sm(30px) 0;
+      .container {
+        .grid:last-child {
+          padding-bottom: get-vw-sm(47px);
+        }
+      }
+      .grid {
+        padding: 0 get-vw-sm(50px) get-vw-sm(30px) get-vw-sm(50px);
+        .text {
+          padding: 0;
+          em {
+            letter-spacing: get-vw-sm(4px);
+            font-size: get-vw-sm(14px);
+            padding-bottom: get-vw-sm(16px);
+          }
+          h2 {
+            font-size: get-vw-sm(32px);
+          }
+          p {}
+        }
+        .image {
+          img {
+            margin: get-vw-sm(15px) 0 0 0;
+          }
+        }
+        &.left {
+          @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: 'text' 'image');
+        }
+        &.right {
+          @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: 'text' 'image');
+          .image {
+            img {
+              float: right;
+            }
+          }
+          .text {
+            padding-left: 0;
+            padding-top: get-vw-sm(44px);
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  .text-box {
+    padding: get-vw-xs(40px) 0 get-vw-xs(111px) 0;
+    .grid {
+      @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: '');
+      .text {
+        padding: 0 0 0 get-vw-xs(11px);
+        em {
+          font-size: get-vw-xs(18px);
+          padding-bottom: get-vw-xs(15px);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          padding-bottom: get-vw-xs(32px);
+        }
+        h1 {
+          font-size: get-vw-xs(34px);
+        }
+        h2 {
+          font-size: get-vw-xs(30px);
+        }
+        h3 {
+          font-size: get-vw-xs(24px);
+        }
+        h4 {
+          font-size: get-vw-xs(22px);
+        }
+        h5 {
+          font-size: get-vw-xs(20px);
+        }
+        h6 {
+          font-size: get-vw-xs(18px);
+        }
+        p {
+          font-size: get-vw-xs(16px);
+          padding-bottom: get-vw-xs(27px);
+        }
+      }
+      .image {
+        .absolute {
+          position: relative;
+        }
+      }
+    }
+    &.internal {
+      padding: get-vw-xs(96px) 0 get-vw-xs(30px) 0;
+      .container {
+        .grid:last-child {
+          padding-bottom: get-vw-xs(47px);
+        }
+      }
+      .grid {
+        padding: 0 get-vw-xs(50px) get-vw-xs(30px) get-vw-xs(50px);
+        .text {
+          padding: 0;
+          em {
+            letter-spacing: get-vw-xs(4px);
+            font-size: get-vw-xs(14px);
+            padding-bottom: get-vw-xs(16px);
+          }
+          h2 {
+            font-size: get-vw-xs(32px);
+          }
+          p {}
+        }
+        .image {
+          img {
+            margin: get-vw-xs(15px) 0 0 0;
+          }
+        }
+        &.left {
+          @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: 'text' 'image');
+        }
+        &.right {
+          @include columns( $quant: 100%, $gutter: 0, $align: stretch, $template: 'text' 'image');
+          .image {
+            img {
+              float: right;
+            }
+          }
+          .text {
+            padding-left: 0;
+            padding-top: get-vw-xs(44px);
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
